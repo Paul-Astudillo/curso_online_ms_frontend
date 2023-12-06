@@ -15,6 +15,7 @@ import { CursoComponent } from './pages/curso/curso.component';
 import { ListaEstudianteComponent } from './pages/lista-estudiante/lista-estudiante.component';
 import { ListaProfesorComponent } from './pages/lista-profesor/lista-profesor.component';
 import { ListaCursoComponent } from './pages/lista-curso/lista-curso.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 
 
@@ -29,6 +30,7 @@ import { ListaCursoComponent } from './pages/lista-curso/lista-curso.component';
     ListaEstudianteComponent,
     ListaProfesorComponent,
     ListaCursoComponent,
+    InicioComponent,
 
   ],
   imports: [
