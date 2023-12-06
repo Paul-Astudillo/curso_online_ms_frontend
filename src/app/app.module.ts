@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProfesorComponent } from './pages/profesor/profesor.component';
 import { CursoComponent } from './pages/curso/curso.component';
+import { ListaEstudianteComponent } from './pages/lista-estudiante/lista-estudiante.component';
 
 
 
@@ -23,6 +24,7 @@ import { CursoComponent } from './pages/curso/curso.component';
     TituloComponent,
     ProfesorComponent,
     CursoComponent,
+    ListaEstudianteComponent,
 
   ],
   imports: [

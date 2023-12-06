@@ -31,7 +31,7 @@ export class EstudianteComponent {
       this.EstudianteService.save(this.estudiante)
       this.estudiante= new Estudiante()
   
-     this.router.navigate(["paginas/listacarreras"]);
+     this.router.navigate(["paginas/listadoEstudiantes"]);
   
   
     }

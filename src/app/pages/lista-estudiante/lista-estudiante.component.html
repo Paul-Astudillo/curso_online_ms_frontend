@@ -1,0 +1,30 @@
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Utiliza *ngFor para iterar sobre la lista de estudiantes y mostrarlos en la tabla -->
+        <tr *ngFor="let estudiante of listadoEstudiantes">
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.apellido }}</td>
+          <td>{{ estudiante.cedula }}</td>
+          <td>{{ estudiante.direccion }}</td>
+          <td>{{ estudiante.telefono }}</td>
+          <td>
+            <!-- Aquí podrías colocar enlaces o botones para acciones como editar o eliminar -->
+            <a (click)="editar(estudiante)">Editar</a> |
+            <a (click)="eliminar(estudiante)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
