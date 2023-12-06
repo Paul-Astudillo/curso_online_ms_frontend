@@ -1,4 +1,4 @@
-export class Cliente {
+export class Estudiante {
     nombre: string = '';
     apellido: string = '';
     cedula: string = '';

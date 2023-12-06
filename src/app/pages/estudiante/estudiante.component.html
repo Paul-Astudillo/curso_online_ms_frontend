@@ -1,31 +1,31 @@
 <div>
-  <form action="" class="cliente-form" #clienteForm="ngForm">
-    <h2>Registrar Cliente</h2>
+  <form action="" class="estudiante-form" #estudianteForm="ngForm">
+    <h2>Registrar Estudiante</h2>
 
     <mat-form-field>
       <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="cliente.nombre" type="text" name="nombre" required>
+      <input matInput [(ngModel)]="estudiante.nombre" type="text" name="nombre" required>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Apellido</mat-label>
-      <input matInput [(ngModel)]="cliente.apellido" type="text" name="apellido" required>
+      <input matInput [(ngModel)]="estudiante.apellido" type="text" name="apellido" required>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Cédula</mat-label>
-      <input matInput [(ngModel)]="cliente.cedula" type="text" name="cedula" maxlength="10" required>
+      <input matInput [(ngModel)]="estudiante.cedula" type="text" name="cedula" maxlength="10" required>
       <mat-error *ngIf="cedulaInvalida">La cédula debe tener 10 dígitos.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Dirección</mat-label>
-      <input matInput [(ngModel)]="cliente.direccion" type="text" name="direccion">
+      <input matInput [(ngModel)]="estudiante.direccion" type="text" name="direccion">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Teléfono</mat-label>
-      <input matInput [(ngModel)]="cliente.telefono" type="text" name="telefono">
+      <input matInput [(ngModel)]="estudiante.telefono" type="text" name="telefono">
     </mat-form-field>
 
     <button mat-raised-button class="custom-mat-button">Registrar</button>
