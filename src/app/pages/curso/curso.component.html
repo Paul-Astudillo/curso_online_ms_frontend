@@ -1,0 +1,28 @@
+<div>
+    <form action="" class="curso-form" #cursoForm="ngForm">
+      <h2>Registrar Curso</h2>
+  
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="curso.nombre" type="text" name="nombre" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Descripción</mat-label>
+        <input matInput [(ngModel)]="curso.descripcion" type="text" name="descripcion" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Duración (en horas)</mat-label>
+        <input matInput [(ngModel)]="curso.duracion" type="number" name="duracion" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Profesor</mat-label>
+        <input matInput [(ngModel)]="curso.profesor" type="text" name="profesor">
+      </mat-form-field>
+    
+      <button mat-raised-button class="custom-mat-button">Registrar Curso</button>
+    </form>
+  </div>
+  

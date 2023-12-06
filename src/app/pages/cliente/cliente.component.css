@@ -1,0 +1,33 @@
+h3 {
+  text-align: center;
+  color: #1ABC9C; /* Verde esmeralda */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna */
+  grid-gap: 20px; /* Espacio entre los elementos */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: orange; /* Cambia "orange" a la tonalidad de naranja que desees */
+  color: #fff; /* Añade este estilo para asegurar que el texto sea visible en el botón */
+  padding: 10px; /* Puedes ajustar el relleno según tus preferencias */
+  border: none; /* Puedes eliminar el borde si no lo necesitas */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkorange; /* Cambia el color al pasar el mouse sobre el botón */
+}

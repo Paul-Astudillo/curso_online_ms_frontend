@@ -1,0 +1,17 @@
+header {
+  background-color:  #fff;
+  color:#333 ;
+  text-align: center; /* Para centrar el texto */
+  padding: 20px; /* Ajusta el relleno según tus preferencias */
+}
+
+h1 {
+  margin: 0;
+}
+
+.imagen {
+  position: absolute;
+  top: 0;
+  right: 20px; /* Ajusta la posición de la imagen desde el borde derecho según tus preferencias */
+  width: 200px;
+}
