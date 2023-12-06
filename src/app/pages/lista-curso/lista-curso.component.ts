@@ -27,7 +27,7 @@ export class ListaCursoComponent {
         nombre: 'curso'
       }
     }
-    this.router.navigate(["pagina/formulario"], params)
+    this.router.navigate(["paginas/formulariocurso"], params)
 
   
   }

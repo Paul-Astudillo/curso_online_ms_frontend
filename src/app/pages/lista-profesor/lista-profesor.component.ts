@@ -27,7 +27,7 @@ export class ListaProfesorComponent {
         nombre: 'profesor'
       }
     }
-    this.router.navigate(["pagina/formulario"], params)
+    this.router.navigate(["paginas/formularioprofesor"], params)
 
   
   }
