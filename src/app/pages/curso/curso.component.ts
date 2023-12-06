@@ -30,7 +30,7 @@ export class CursoComponent {
       this.cursoService.save(this.curso)
       this.curso= new Curso()
   
-     this.router.navigate(["paginas/listarcurso"]);
+     this.router.navigate(["paginas/listadoCursos"]);
   
   
     }
