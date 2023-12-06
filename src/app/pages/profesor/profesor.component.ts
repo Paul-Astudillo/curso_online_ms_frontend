@@ -31,7 +31,7 @@ export class ProfesorComponent {
       this.profesorService.save(this.profesor)
       this.profesor= new Profesor()
   
-     this.router.navigate(["paginas/listacarreras"]);
+     this.router.navigate(["paginas/listadoProfesores"]);
   
   
     }

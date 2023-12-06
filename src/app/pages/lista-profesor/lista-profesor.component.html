@@ -1,0 +1,30 @@
+<div>
+    <table class="profesor-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Especialidad</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Utiliza *ngFor para iterar sobre la lista de profesores y mostrarlos en la tabla -->
+        <tr *ngFor="let profesor of listadoProfesores">
+          <td>{{ profesor.nombre }}</td>
+          <td>{{ profesor.apellido }}</td>
+          <td>{{ profesor.cedula }}</td>
+          <td>{{ profesor.especialidad }}</td>
+          <td>{{ profesor.telefono }}</td>
+          <td>
+            <!-- Agrega enlaces o botones para acciones como editar o eliminar -->
+            <a (click)="editar(profesor)">Editar</a> |
+            <a (click)="eliminar(profesor)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
