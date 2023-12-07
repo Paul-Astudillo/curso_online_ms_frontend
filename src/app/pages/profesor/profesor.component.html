@@ -15,7 +15,7 @@
       <mat-form-field>
         <mat-label>Cédula</mat-label>
         <input matInput [(ngModel)]="profesor.cedula" type="text" name="cedula" maxlength="10" required>
-        <mat-error *ngIf="cedulaInvalida">La cédula debe tener 10 dígitos.</mat-error>
+        <mat-error>La cédula debe tener 10 dígitos.</mat-error>
       </mat-form-field>
   
       <mat-form-field>
@@ -30,7 +30,7 @@
   
       <mat-form-field>
         <mat-label>Correo Electrónico</mat-label>
-        <input matInput [(ngModel)]="profesor" type="email" name="correoElectronico" required>
+        <input matInput [(ngModel)]="profesor.correoElectronico" type="email" name="correoElectronico" required>
       </mat-form-field>
       
       <button mat-raised-button class="custom-mat-button" (click)="guardar()">Registrar Profesor</button>

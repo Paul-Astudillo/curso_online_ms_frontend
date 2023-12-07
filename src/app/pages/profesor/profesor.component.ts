@@ -34,12 +34,7 @@ export class ProfesorComponent {
       this.profesor= new Profesor()
   
     }
-    cedulaInvalida = false; 
 
-    validarCedula() {
-      const cedulaPattern = /[0-9]{10}/;
-      this.cedulaInvalida = !cedulaPattern.test(this.profesor.cedula);
-    }
 
 
 

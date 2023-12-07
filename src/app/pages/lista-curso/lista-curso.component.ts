@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
+import { ProfesorService } from 'src/app/services/profesor.service';
 import { Curso } from 'src/domain/micro_s2/curso';
+import { Profesor } from 'src/domain/profesor';
 
 @Component({
   selector: 'app-lista-curso',
@@ -9,38 +11,16 @@ import { Curso } from 'src/domain/micro_s2/curso';
   styleUrls: ['./lista-curso.component.css']
 })
 export class ListaCursoComponent {
-  listadoCursos: Curso[] = [] 
-  cursoteSelecionada: Curso| null = null;
+
+  listadoCurso: Curso[] = [] 
+  //estudianteSelecionada: Estudiante| null = null;
   
-  constructor(cursoService:CursoService,private router: Router ) {
-    this.listadoCursos = cursoService.getlist()
-  }
-
-
-
-  editar(curso: Curso){
-
-
-    let params: NavigationExtras = {
-      queryParams: {
-        usuario: curso,
-        nombre: 'curso'
+  constructor(private cursoService:CursoService,private router: Router ) {
+    this.cursoService.getAll().subscribe(
+      (data: Curso[]) => {
+        this.listadoCurso = data
       }
-    }
-    this.router.navigate(["paginas/formulariocurso"], params)
-
-  
+    )
   }
-
-
-  eliminar(curso: Curso) {
-    for(let i = 0 ; i < this.listadoCursos.length ; i++){
-      if(this.listadoCursos[i] === curso){
-        console.log("son iguales");
-        this.listadoCursos.splice(i,1);
-      }
-    }
-  }
-
 
 }

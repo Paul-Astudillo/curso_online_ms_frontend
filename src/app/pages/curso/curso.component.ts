@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
+import { ProfesorService } from 'src/app/services/profesor.service';
 import { Curso } from 'src/domain/micro_s2/curso';
+import { Profesor } from 'src/domain/micro_s2/profesor';
 
 @Component({
   selector: 'app-curso',
@@ -11,9 +13,10 @@ import { Curso } from 'src/domain/micro_s2/curso';
 export class CursoComponent {
 
   curso:Curso=new Curso();
-  
+  listadoProfesores: Profesor[] = [];
+  profesorSeleccionado: Profesor | null = null;
 
-  constructor(private cursoService: CursoService,
+  constructor(private cursoService: CursoService,private profesorService:ProfesorService,
     private router: Router) {
   
       let params = this.router.getCurrentNavigation()?.extras.queryParams;
@@ -22,17 +25,33 @@ export class CursoComponent {
         this.curso= new Curso()
         this.curso = params['contacto']
       }
+      this.profesorService.getAll().subscribe(
+        (data: Profesor[]) => {
+          this.listadoProfesores = data
+        }
+      )
+
+      
     }
   
   
     guardar(){
       console.log(this.curso)
-      this.cursoService.save(this.curso)
-      this.curso= new Curso()
-  
-     this.router.navigate(["paginas/listadoCursos"]);
-  
+      this.cursoService.save(this.curso).subscribe((data)=>{
+        console.log("resultado POST: ", data)
+        this.router.navigate(["paginas/listadoCursos"]);
+      })
+      this.curso= new Curso();
+      this.seleccionarProfesor
+      
   
     }
+
+    seleccionarProfesor(profesor: Profesor) {
+      this.profesorSeleccionado = profesor;
+      console.log(profesor)
+    }
+
+
 
 }

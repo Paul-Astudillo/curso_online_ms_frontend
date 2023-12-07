@@ -1,28 +1,24 @@
 <div>
   <h1 class="titulo">Lista de Cursos</h1>
-    <table class="curso-table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Duración (horas)</th>
-          <th>Profesor</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Utiliza *ngFor para iterar sobre la lista de cursos y mostrarlos en la tabla -->
-        <tr *ngFor="let curso of listadoCursos">
-          <td>{{ curso.nombre }}</td>
-          <td>{{ curso.descripcion }}</td>
-          <td>{{ curso.duracion }}</td>
-          <td>{{ curso.profesor }}</td>
-          <td>
-            <!-- Agrega enlaces o botones para acciones como editar o eliminar -->
-            <a (click)="eliminar(curso)">Eliminar</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <table class="curso-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Duración (horas)</th>
+        <th>Profesor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Utiliza *ngFor para iterar sobre la lista de cursos y mostrarlos en la tabla -->
+      <tr *ngFor="let curso of listadoCurso">
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.descripcion }}</td>
+        <td>{{ curso.estado }}</td>
+        <td>{{ curso.duracion }}</td>
+        <td>{{ curso.profesor }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

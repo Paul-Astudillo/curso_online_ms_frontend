@@ -1,28 +1,39 @@
 <div>
-    <form action="" class="curso-form" #cursoForm="ngForm">
-      <h2>Registrar Curso</h2>
-  
-      <mat-form-field>
-        <mat-label>Nombre</mat-label>
-        <input matInput [(ngModel)]="curso.nombre" type="text" name="nombre" required>
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Descripción</mat-label>
-        <input matInput [(ngModel)]="curso.descripcion" type="text" name="descripcion" required>
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Duración (en horas)</mat-label>
-        <input matInput [(ngModel)]="curso.duracion" type="number" name="duracion" required>
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Profesor</mat-label>
-        <input matInput [(ngModel)]="curso.profesor" type="text" name="profesor">
-      </mat-form-field>
-    
-      <button mat-raised-button class="custom-mat-button" (click)="guardar()">Registrar Curso</button>
-    </form>
-  </div>
-  
+  <form action="" class="curso-form" #cursoForm="ngForm">
+    <h2>Registrar Curso</h2>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="curso.nombre" type="text" name="nombre" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput [(ngModel)]="curso.descripcion" type="text" name="descripcion" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select [(ngModel)]="curso.estado" name="estado" required>
+        <mat-option value="Si">Sí</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Duración (en horas)</mat-label>
+      <input matInput [(ngModel)]="curso.duracion" type="number" name="duracion" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Profesor</mat-label>
+      <mat-select [(ngModel)]="profesorSeleccionado" name="profesor" required>
+        <mat-option *ngFor="let profesor of listadoProfesores" [value]="profesor.cedula">
+          ({{ profesor.cedula }}) {{ profesor.nombre }} 
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button class="custom-mat-button" (click)="guardar()">Registrar Curso</button>
+  </form>
+</div>
