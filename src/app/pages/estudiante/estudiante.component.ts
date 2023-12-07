@@ -28,10 +28,13 @@ export class EstudianteComponent {
   
     guardar(){
       console.log(this.estudiante)
-      this.estudianteService.save(this.estudiante)
+      this.estudianteService.save(this.estudiante).subscribe((data)=>{
+        console.log("resultado POST: ", data)
+        this.router.navigate(["paginas/listadoEstudiantes"]);
+      })
       this.estudiante= new Estudiante()
   
-     this.router.navigate(["paginas/listadoEstudiantes"]);
+    
   
   
     }
