@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
-import { Curso } from 'src/domain/curso';
+import { Curso } from 'src/domain/micro_s2/curso';
 
 @Component({
   selector: 'app-lista-curso',

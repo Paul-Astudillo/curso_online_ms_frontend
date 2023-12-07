@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EstudianteService } from 'src/app/services/estudiante.service';
-import { Estudiante } from 'src/domain/estudiante';
+import { Estudiante } from 'src/domain/micro_s1/estudiante';
 
 @Component({
   selector: 'app-Estudiante',
@@ -14,7 +14,7 @@ export class EstudianteComponent {
   estudiante:Estudiante=new Estudiante();
   
 
-  constructor(private EstudianteService: EstudianteService,
+  constructor(private estudianteService: EstudianteService,
     private router: Router) {
   
       let params = this.router.getCurrentNavigation()?.extras.queryParams;
@@ -28,7 +28,7 @@ export class EstudianteComponent {
   
     guardar(){
       console.log(this.estudiante)
-      this.EstudianteService.save(this.estudiante)
+      this.estudianteService.save(this.estudiante)
       this.estudiante= new Estudiante()
   
      this.router.navigate(["paginas/listadoEstudiantes"]);

@@ -16,7 +16,7 @@ import { ListaEstudianteComponent } from './pages/lista-estudiante/lista-estudia
 import { ListaProfesorComponent } from './pages/lista-profesor/lista-profesor.component';
 import { ListaCursoComponent } from './pages/lista-curso/lista-curso.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

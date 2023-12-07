@@ -4,6 +4,5 @@ export class Profesor {
     cedula: string = '';
     especialidad: string = '';
     telefono: string = '';
-
   }
   

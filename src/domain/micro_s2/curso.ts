@@ -1,4 +1,4 @@
-import { Estudiante } from "./estudiante";
+import { Estudiante } from "../micro_s1/estudiante";
 import { Profesor } from "./profesor";
 
 export class Curso {
@@ -6,7 +6,5 @@ export class Curso {
     descripcion: string = '';
     duracion: number = 0;
     profesor: Profesor | null = null; // Asigna un profesor al curso
-    estudiantes: Estudiante[] = []; // Lista de estudiantes en el curso
-  
   }
   
