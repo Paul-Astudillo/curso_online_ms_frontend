@@ -1,8 +1,10 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Profesor } from 'src/domain/micro_s2/profesor';
 
 
-const urlbase = "http://localhost:8080/micro1/estudiante/"
+const urlbase = "http://localhost:8080/micro2/profesor/"
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +14,21 @@ const urlbase = "http://localhost:8080/micro1/estudiante/"
 
 export class ProfesorService {
 
-  Profesor :Profesor[]=[]
+  constructor(private http: HttpClient){}
 
-  save(contacto:Profesor){
+ 
 
-    this.Profesor.push(contacto)
-    console.log(this.Profesor );
+  save(profesor:Profesor){
+
+    console.log("Servicio POST")
+    console.log("profesor: "+profesor.cedula)
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json'})
+    return this.http.post<any>(urlbase+"guardar", JSON.stringify(profesor), {headers})
     
   }
-  getlist(){
-return this.Profesor 
-
+  getAll(): Observable<Profesor[]>{
+     return this.http.get<Profesor[]>(urlbase+"all")
   }
+  
 }

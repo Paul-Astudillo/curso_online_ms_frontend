@@ -10,7 +10,6 @@ import { Profesor } from 'src/domain/micro_s2/profesor';
 })
 export class ProfesorComponent {
 
-
   profesor:Profesor=new Profesor();
   
 
@@ -28,19 +27,20 @@ export class ProfesorComponent {
   
     guardar(){
       console.log(this.profesor)
-      this.profesorService.save(this.profesor)
+      this.profesorService.save(this.profesor).subscribe((data)=>{
+        console.log("resultado POST: ", data)
+        this.router.navigate(["paginas/listadoProfesores"]);
+      })
       this.profesor= new Profesor()
   
-     this.router.navigate(["paginas/listadoProfesores"]);
-  
-  
     }
-
     cedulaInvalida = false; 
 
     validarCedula() {
       const cedulaPattern = /[0-9]{10}/;
       this.cedulaInvalida = !cedulaPattern.test(this.profesor.cedula);
     }
+
+
 
 }

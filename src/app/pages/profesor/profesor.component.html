@@ -28,6 +28,11 @@
         <input matInput [(ngModel)]="profesor.telefono" type="text" name="telefono" required>
       </mat-form-field>
   
+      <mat-form-field>
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput [(ngModel)]="profesor" type="email" name="correoElectronico" required>
+      </mat-form-field>
+      
       <button mat-raised-button class="custom-mat-button" (click)="guardar()">Registrar Profesor</button>
     </form>
   </div>

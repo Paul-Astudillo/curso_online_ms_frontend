@@ -11,34 +11,13 @@ import { Profesor } from 'src/domain/micro_s2/profesor';
 export class ListaProfesorComponent {
 
   listadoProfesores: Profesor[] = [] 
-  profesorSelecionada: Profesor| null = null;
+  //estudianteSelecionada: Estudiante| null = null;
   
-  constructor(profesorService:ProfesorService,private router: Router ) {
-    this.listadoProfesores = profesorService.getlist()
-  }
-
-
-  editar(profesor: Profesor){
-
-
-    let params: NavigationExtras = {
-      queryParams: {
-        usuario: profesor,
-        nombre: 'profesor'
+  constructor(private profesorService:ProfesorService,private router: Router ) {
+    this.profesorService.getAll().subscribe(
+      (data: Profesor[]) => {
+        this.listadoProfesores = data
       }
-    }
-    this.router.navigate(["paginas/formularioprofesor"], params)
-
-  
-  }
-
-
-  eliminar(profesor: Profesor) {
-    for(let i = 0 ; i < this.listadoProfesores.length ; i++){
-      if(this.listadoProfesores[i] === profesor){
-        console.log("son iguales");
-        this.listadoProfesores.splice(i,1);
-      }
-    }
+    )
   }
 }
