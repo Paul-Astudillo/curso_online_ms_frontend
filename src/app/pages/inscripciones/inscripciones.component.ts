@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
 import { InscripcionesService } from 'src/app/services/inscripciones.service';
-import { Curso } from 'src/domain/micro_s2/curso';
+import { Curso } from '../../domain/micro_s2/curso';
+import { Inscripcion } from 'src/app/domain/micro_s3/inscripcion';
 
 
 @Component({
@@ -19,6 +20,8 @@ export class InscripcionesComponent {
   resultadoBusqueda: any; // Propiedad para almacenar el resultado de la búsqueda
   cursosSeleccionados: Curso[] = [];
   
+  inscripcion = new Inscripcion()
+
   constructor(private cursoService:CursoService,private inscripcionesService: InscripcionesService,private router: Router , private http: HttpClient ) {
     this.cursoService.getAll().subscribe(
       (data: Curso[]) => {
@@ -60,9 +63,19 @@ export class InscripcionesComponent {
   }
 
   inscribir(){
+
+      this.inscripcion.cedula=this.resultadoBusqueda.cedula
+      this.inscripcion.nombre= this.resultadoBusqueda.nombre
+      this.inscripcion.apellido= this.resultadoBusqueda.apellido
+      this.inscripcion.cursos= this.cursosSeleccionados
+      this.inscripcion.fechaInscripcion = new Date()
+
+
+
       console.log("cursos seleccionados ")
       console.log(this.cursosSeleccionados)
-      this.inscripcionesService.save(this.resultadoBusqueda, this.cursosSeleccionados).subscribe((data)=>{
+
+      this.inscripcionesService.save(this.inscripcion).subscribe((data)=>{
         console.log("resultado POST: ", data)
         //this.router.navigate(["paginas/listadoInscripciones"]);
       })

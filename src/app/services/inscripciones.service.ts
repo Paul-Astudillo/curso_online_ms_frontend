@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Estudiante } from 'src/domain/micro_s3/estudiante';
-import { Curso } from 'src/domain/micro_s3/curso';
+import { Estudiante } from '../domain/micro_s1/estudiante';
+import { Curso } from '../domain/micro_s2/curso';
+import { Inscripcion } from '../domain/micro_s3/inscripcion';
+
 
 const urlbase = "http://localhost:8083/micro3/inscripciones/"
 
@@ -11,24 +13,22 @@ const urlbase = "http://localhost:8083/micro3/inscripciones/"
 })
 export class InscripcionesService {
 
+
+
   constructor(private http: HttpClient) { }
   
-  ///             micros1         micros2
-  save(estudiante: Estudiante, cursos: Curso[]){
-    console.log("Servicio POST MS3")
-    console.log("estudiante: "+estudiante.cedula)
-    console.log("curso: "+cursos)
+  
+  save(inscripcion: Inscripcion){
 
-    estudiante.cursos = cursos
-
-    console.log(estudiante)
-
-    const headers = new HttpHeaders({'Content-Type': 'application/json'})
-    return this.http.post<any>(urlbase+"guardar", JSON.stringify(estudiante), {headers})
+    console.log("POST inscripcion")
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    
+    return this.http.post<any>(urlbase+"guardar", JSON.stringify(inscripcion), { headers })
+      
   }
 
-  getAll(): Observable<Estudiante[]>{
-    return this.http.get<Estudiante[]>(urlbase+"all")
+  getAll(): Observable<Inscripcion[]>{
+    return this.http.get<Inscripcion[]>(urlbase+"all")
   }
 
 }
