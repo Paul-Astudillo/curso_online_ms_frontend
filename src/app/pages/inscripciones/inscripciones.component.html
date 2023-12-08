@@ -1,0 +1,57 @@
+<body>
+
+    <div class="container">
+        <h1>Inscripciones</h1>
+        <p>Buscar Estudiante:</p>
+        <input type="text" id="searchInput" placeholder="Ingrese el Estudiante buscar" [(ngModel)]="cedula">
+        <button (click)="buscarEstudiantePorCedula(cedula)">Buscar</button>
+
+        <div id="resultado">
+            <h2>Resultado de la Búsqueda</h2>
+            <div *ngIf="resultadoBusqueda">
+                <!-- Muestra los detalles del resultado de la búsqueda -->
+                <p><strong>Cedula:</strong> {{ resultadoBusqueda.cedula }}</p>
+                <p><strong>Nombre:</strong> {{ resultadoBusqueda.nombre }}</p>
+                <p><strong>Nombre:</strong> {{ resultadoBusqueda.apellido }}</p>
+                <!-- Agrega más campos según sea necesario -->
+            </div>
+            <div *ngIf="!resultadoBusqueda">
+                <p>No se encontraron resultados.</p>
+            </div>
+        </div>
+
+        <div id="listaCursos">
+            <h2>Lista de Cursos</h2>
+            <table class="curso-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Estado</th>
+                  <th>Duración (horas)</th>
+                  <th>Profesor</th>
+                  <th>Elegir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Utiliza *ngFor para iterar sobre la lista de cursos y mostrarlos en la tabla -->
+                <tr *ngFor="let curso of listadoCurso">
+                  <td>{{ curso.nombre }}</td>
+                  <td>{{ curso.descripcion }}</td>
+                  <td>{{ curso.estado }}</td>
+                  <td>{{ curso.duracion }}</td>
+                  <td>{{ curso.profesor?.nombre }} {{curso.profesor?.apellido }}</td>
+                  <td>
+                    <input type="checkbox" (change)="seleccionarCurso(curso)">
+                </td>
+                </tr>
+              </tbody>
+            </table>
+<br>
+<br>
+            <button onclick="guardar()">Guardar</button>
+        </div>
+    </div>
+
+</body>
+

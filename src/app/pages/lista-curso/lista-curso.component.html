@@ -17,7 +17,7 @@
         <td>{{ curso.descripcion }}</td>
         <td>{{ curso.estado }}</td>
         <td>{{ curso.duracion }}</td>
-        <td>{{ curso.profesor }}</td>
+        <td>{{ curso.profesor?.nombre }} {{curso.profesor?.apellido }}</td>
       </tr>
     </tbody>
   </table>

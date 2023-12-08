@@ -7,6 +7,7 @@ import { ListaEstudianteComponent } from './pages/lista-estudiante/lista-estudia
 import { ListaProfesorComponent } from './pages/lista-profesor/lista-profesor.component';
 import { ListaCursoComponent } from './pages/lista-curso/lista-curso.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { InscripcionesComponent } from './pages/inscripciones/inscripciones.component';
 
 const routes: Routes = [
 
@@ -16,7 +17,10 @@ const routes: Routes = [
   {path:"paginas/listadoEstudiantes", component:ListaEstudianteComponent},
   {path:"paginas/listadoProfesores", component:ListaProfesorComponent},
   {path:"paginas/listadoCursos", component:ListaCursoComponent},
-  {path:"paginas/Inicio", component:InicioComponent}
+  {path:"paginas/Inicio", component:InicioComponent},
+  {path:"paginas/inscripciones", component:InscripcionesComponent}
+
+  
 
 
 ];
