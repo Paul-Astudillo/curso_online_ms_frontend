@@ -1,0 +1,32 @@
+<div>
+    <h1 class="titulo">Lista de Inscripciones</h1>
+    <table class="curso-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cédula</th>
+                <th>Cursos</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Utiliza *ngFor para iterar sobre la lista de inscripciones y mostrarlos en la tabla -->
+            <!-- <tr *ngFor="let inscripcion of listadoInscripciones">
+                <td>{{ inscripcion.id }}</td>
+                <td>{{ inscripcion.nombre }}</td>
+                <td>{{ inscripcion.apellido }}</td>
+                <td>{{ inscripcion.cedula }}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let curso of inscripcion.cursos">
+                            {{ curso.nombre }}
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ inscripcion.fecha | date }}</td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>

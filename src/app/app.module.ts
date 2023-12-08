@@ -19,6 +19,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { InscripcionesComponent } from './pages/inscripciones/inscripciones.component';
+import { ListaInscripcionesComponent } from './pages/lista-inscripciones/lista-inscripciones.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { InscripcionesComponent } from './pages/inscripciones/inscripciones.comp
     ListaCursoComponent,
     InicioComponent,
     InscripcionesComponent,
+    ListaInscripcionesComponent,
 
   ],
   imports: [
