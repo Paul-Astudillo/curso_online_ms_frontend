@@ -6,5 +6,5 @@ export class Curso {
     descripcion: string = '';
     estado: string = '';
     duracion: number = 0;
-    profesor: Profesor | null = null; // Asigna un profesor al curso
+    //profesor: Profesor | null = null; // Asigna un profesor al curso
 }
