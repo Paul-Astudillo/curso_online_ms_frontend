@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Estudiante } from 'src/domain/micro_s1/estudiante';
+import { Estudiante } from '../domain/micro_s1/estudiante';
 
 
 const urlbase = "http://localhost:8081/micro1/estudiante/"

@@ -12,7 +12,7 @@
                 <!-- Muestra los detalles del resultado de la búsqueda -->
                 <p><strong>Cedula:</strong> {{ resultadoBusqueda.cedula }}</p>
                 <p><strong>Nombre:</strong> {{ resultadoBusqueda.nombre }}</p>
-                <p><strong>Nombre:</strong> {{ resultadoBusqueda.apellido }}</p>
+                <p><strong>Apellido:</strong> {{ resultadoBusqueda.apellido }}</p>
                 <!-- Agrega más campos según sea necesario -->
             </div>
             <div *ngIf="!resultadoBusqueda">
@@ -49,7 +49,8 @@
             </table>
 <br>
 <br>
-            <button onclick="guardar()">Guardar</button>
+            <button (click)="inscribir()">Inscribir</button>
+            
         </div>
     </div>
 

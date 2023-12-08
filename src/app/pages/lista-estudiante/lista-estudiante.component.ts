@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { EstudianteService } from 'src/app/services/estudiante.service';
-import { Estudiante } from 'src/domain/micro_s1/estudiante';
+import { Estudiante } from '../../domain/micro_s1/estudiante';
 
 @Component({
   selector: 'app-lista-estudiante',

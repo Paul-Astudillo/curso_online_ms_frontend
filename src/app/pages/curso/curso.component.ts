@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
 import { ProfesorService } from 'src/app/services/profesor.service';
-import { Curso } from 'src/domain/micro_s2/curso';
-import { Profesor } from 'src/domain/micro_s2/profesor';
+import { Curso } from '../../domain/micro_s2/curso';
+import { Profesor } from '../../domain/micro_s2/profesor';
 
 @Component({
   selector: 'app-curso',

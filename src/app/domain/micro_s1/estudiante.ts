@@ -1,9 +1,7 @@
-export class Profesor {
+export class Estudiante {
     nombre: string = '';
     apellido: string = '';
     cedula: string = '';
-    especialidad: string = '';
+    correoElectronico: string = '';
     telefono: string = '';
-    correoElectronico:string = '';
-  }
-  
+}
