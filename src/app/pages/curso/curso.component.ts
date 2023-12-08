@@ -36,22 +36,20 @@ export class CursoComponent {
   
   
     guardar(){
+     
+      this.curso.profesor = this.profesorSeleccionado
       console.log(this.curso)
       this.cursoService.save(this.curso).subscribe((data)=>{
         console.log("resultado POST: ", data)
         this.router.navigate(["paginas/listadoCursos"]);
       })
       this.curso= new Curso();
-      this.seleccionarProfesor
+      //this.seleccionarProfesor
       
   
     }
 
-    seleccionarProfesor(profesor: Profesor) {
-      this.profesorSeleccionado = profesor;
-      console.log(profesor)
-    }
-
+    
 
 
 }

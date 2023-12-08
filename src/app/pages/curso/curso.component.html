@@ -15,8 +15,8 @@
     <mat-form-field>
       <mat-label>Estado</mat-label>
       <mat-select [(ngModel)]="curso.estado" name="estado" required>
-        <mat-option value="Si">Sí</mat-option>
-        <mat-option value="No">No</mat-option>
+        <mat-option value="Por Iniciar">Por Iniciar</mat-option>
+        <mat-option value="En Curso">En Curso</mat-option> 
       </mat-select>
     </mat-form-field>
 
@@ -28,8 +28,8 @@
     <mat-form-field>
       <mat-label>Profesor</mat-label>
       <mat-select [(ngModel)]="profesorSeleccionado" name="profesor" required>
-        <mat-option *ngFor="let profesor of listadoProfesores" [value]="profesor.cedula">
-          ({{ profesor.cedula }}) {{ profesor.nombre }} 
+        <mat-option *ngFor="let profesor of listadoProfesores" [value]="profesor">
+          ({{ profesor.cedula }}) {{ profesor.nombre }} {{profesor.apellido}}
         </mat-option>
       </mat-select>
     </mat-form-field>

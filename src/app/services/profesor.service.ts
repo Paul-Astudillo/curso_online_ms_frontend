@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Profesor } from 'src/domain/micro_s2/profesor';
 
 
-const urlbase = "http://localhost:8080/micro2/profesor/"
+const urlbase = "http://localhost:8082/micro2/profesor/"
 
 @Injectable({
   providedIn: 'root'
