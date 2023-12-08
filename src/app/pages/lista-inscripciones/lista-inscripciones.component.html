@@ -13,20 +13,20 @@
         </thead>
         <tbody>
             <!-- Utiliza *ngFor para iterar sobre la lista de inscripciones y mostrarlos en la tabla -->
-            <!-- <tr *ngFor="let inscripcion of listadoInscripciones">
+             <tr *ngFor="let inscripcion of listadoInscripciones">
                 <td>{{ inscripcion.id }}</td>
                 <td>{{ inscripcion.nombre }}</td>
                 <td>{{ inscripcion.apellido }}</td>
                 <td>{{ inscripcion.cedula }}</td>
                 <td>
                     <ul>
-                        <li *ngFor="let curso of inscripcion.cursos">
-                            {{ curso.nombre }}
-                        </li>
+                        
+                            {{ inscripcion.cursos }}
+                        
                     </ul>
                 </td>
-                <td>{{ inscripcion.fecha | date }}</td>
-            </tr> -->
+                <td>{{ inscripcion.fechaInscripcion }}</td>
+            </tr> 
         </tbody>
     </table>
 </div>

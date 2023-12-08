@@ -67,7 +67,11 @@ export class InscripcionesComponent {
       this.inscripcion.cedula=this.resultadoBusqueda.cedula
       this.inscripcion.nombre= this.resultadoBusqueda.nombre
       this.inscripcion.apellido= this.resultadoBusqueda.apellido
-      this.inscripcion.cursos= this.cursosSeleccionados
+      this.inscripcion.cursos =''
+      for (const curso of this.cursosSeleccionados){
+          this.inscripcion.cursos = this.inscripcion.cursos + curso.nombre+" : "+curso.profesor?.nombre+" "+curso.profesor?.apellido+" | \n"
+      }
+
       this.inscripcion.fechaInscripcion = new Date()
 
 
@@ -77,7 +81,7 @@ export class InscripcionesComponent {
 
       this.inscripcionesService.save(this.inscripcion).subscribe((data)=>{
         console.log("resultado POST: ", data)
-        //this.router.navigate(["paginas/listadoInscripciones"]);
+        this.router.navigate(["paginas/listadoInscripciones"]);
       })
 
   }
